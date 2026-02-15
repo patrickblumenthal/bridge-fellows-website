@@ -664,49 +664,64 @@ section { padding: 6rem 3rem; }
 
 /* ---- TEAM ---- */
 .team-section {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
   border-top: 1px solid var(--border);
 }
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
 }
 .team-card {
-  padding: 1.5rem;
+  padding: 2rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 3px;
   text-align: center;
 }
 .team-photo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.2rem;
   background-color: var(--border);
 }
 .team-name {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 400;
   margin-bottom: 0.3rem;
   color: var(--fg);
 }
 .team-role {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--accent);
   letter-spacing: 0.05em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 .team-bio {
   font-size: 0.82rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 1rem;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.team-bio li {
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+.team-bio li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 .team-linkedin {
   display: inline-flex;
