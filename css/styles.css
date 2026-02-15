@@ -494,6 +494,17 @@ section { padding: 6rem 3rem; }
   margin-bottom: 1.5rem;
 }
 .about strong { color: var(--fg); font-weight: 500; }
+.program {
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+.program p {
+  font-size: 1.1rem;
+  color: #bbb;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
 .what-you-get {
   margin-top: 2rem;
   padding: 2rem;
