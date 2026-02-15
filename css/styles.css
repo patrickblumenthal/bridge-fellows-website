@@ -663,47 +663,60 @@ section { padding: 6rem 3rem; }
 .whitelist-btn:hover { opacity: 0.9; }
 
 /* ---- TEAM ---- */
-.team {
-  max-width: 1100px;
+.team-section {
+  max-width: 800px;
   margin: 0 auto;
   border-top: 1px solid var(--border);
 }
-.team-section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-  margin-top: 3rem;
-  font-weight: 500;
-}
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 .team-card {
   padding: 1.5rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 3px;
+  text-align: center;
 }
-.team-card h3 {
+.team-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 1rem;
+  background-color: var(--border);
+}
+.team-name {
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 400;
   margin-bottom: 0.3rem;
+  color: var(--fg);
 }
-.team-card .role {
+.team-role {
   font-size: 0.8rem;
   color: var(--accent);
   letter-spacing: 0.05em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 }
-.team-card p {
-  font-size: 0.85rem;
+.team-bio {
+  font-size: 0.82rem;
   color: var(--muted);
   line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.team-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+.team-linkedin:hover {
+  color: var(--accent);
 }
 
 /* ---- FAQ ---- */
