@@ -645,17 +645,17 @@ footer p {
   /* Stories */
   .stories-section {
     padding: 3rem 1.5rem 0;
+    padding-bottom: 60vh;
   }
   .stories-container h2 {
     font-size: 1.6rem;
     margin-bottom: 2rem;
   }
   .story-card-wrapper {
-    height: auto;
     position: sticky;
     top: 60px;
     padding-top: 0.5rem;
-    height: 85vh;
+    height: 115vh;
   }
   .story-card {
     grid-template-columns: 1fr;
@@ -765,8 +765,8 @@ footer p {
   }
   .hero h1 { font-size: 1.65rem; }
   .hero-sub { font-size: 1rem; }
-  .stories-section { padding: 3rem 1.2rem 0; }
-  .story-card-wrapper { height: 80vh; }
+  .stories-section { padding: 3rem 1.2rem 0; padding-bottom: 60vh; }
+  .story-card-wrapper { height: 120vh; }
   .story-card {
     padding: 1.2rem;
     border-radius: 10px;
