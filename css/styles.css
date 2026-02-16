@@ -225,7 +225,7 @@ section { padding: 6rem 3rem; }
   margin-bottom: 3rem;
 }
 .story-card-wrapper {
-  height: 85vh;
+  height: 55vh;
   position: sticky;
   top: 80px;
   display: flex;
