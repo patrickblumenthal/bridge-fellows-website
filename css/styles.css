@@ -206,30 +206,25 @@ section { padding: 6rem 3rem; }
 }
 .about strong { color: var(--fg); font-weight: 500; }
 
-/* ---- STORIES (sticky stacking cards) ---- */
+/* ---- STORIES (scroll reveal cards) ---- */
 .stories-section {
-  padding: 4rem 2rem 0;
+  padding: 4rem 2rem 6rem;
   background: var(--bg);
   border-top: 1px solid var(--border);
 }
 .stories-container {
   max-width: 950px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 .stories-container h2 {
   text-align: center;
   font-family: var(--serif);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
-  margin-bottom: 3rem;
-}
-.story-card-wrapper {
-  height: 55vh;
-  position: sticky;
-  top: 80px;
-  display: flex;
-  align-items: flex-start;
-  padding-top: 1rem;
+  margin-bottom: 1rem;
 }
 .story-card {
   display: grid;
@@ -241,9 +236,21 @@ section { padding: 6rem 3rem; }
   padding: 2.5rem;
   align-items: start;
   width: 100%;
-  box-shadow: 0 -4px 30px rgba(0,0,0,0.4);
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
+.story-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.story-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.story-reveal:nth-child(2) { transition-delay: 0s; }
+.story-reveal:nth-child(3) { transition-delay: 0s; }
+.story-reveal:nth-child(4) { transition-delay: 0s; }
 .story-image {
   background-size: cover;
   background-position: center;
@@ -573,9 +580,6 @@ footer p {
     padding: 2rem;
   }
   .story-image { height: 240px; }
-  .story-card-wrapper {
-    height: 75vh;
-  }
 }
 
 /* Mobile */
@@ -644,18 +648,14 @@ footer p {
 
   /* Stories */
   .stories-section {
-    padding: 3rem 1.5rem 0;
-    padding-bottom: 10vh;
+    padding: 3rem 1.5rem 4rem;
+  }
+  .stories-container {
+    gap: 2rem;
   }
   .stories-container h2 {
     font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-  .story-card-wrapper {
-    position: sticky;
-    top: 60px;
-    padding-top: 0.5rem;
-    height: 100vh;
+    margin-bottom: 1rem;
   }
   .story-card {
     grid-template-columns: 1fr;
@@ -765,8 +765,7 @@ footer p {
   }
   .hero h1 { font-size: 1.65rem; }
   .hero-sub { font-size: 1rem; }
-  .stories-section { padding: 3rem 1.2rem 0; padding-bottom: 10vh; }
-  .story-card-wrapper { height: 105vh; }
+  .stories-section { padding: 3rem 1.2rem 3rem; }
   .story-card {
     padding: 1.2rem;
     border-radius: 10px;

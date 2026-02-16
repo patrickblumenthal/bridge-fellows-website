@@ -9,40 +9,16 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Sticky stacking cards — as you scroll past each card,
-// it scales down and fades slightly so the next card appears to slide over it
-(function() {
-  const wrappers = document.querySelectorAll('.story-card-wrapper');
-  if (!wrappers.length) return;
+// Story cards scroll reveal
+const storyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
 
-  function updateCards() {
-    wrappers.forEach((wrapper, i) => {
-      const card = wrapper.querySelector('.story-card');
-      const rect = wrapper.getBoundingClientRect();
-      const navHeight = 80;
-      const viewH = window.innerHeight;
-
-      // How far past the sticky point the wrapper has scrolled
-      const scrollPast = navHeight - rect.top;
-      const wrapperH = wrapper.offsetHeight;
-
-      if (scrollPast > 0 && scrollPast < wrapperH) {
-        // Progress 0 → 1 as this card scrolls away
-        const progress = Math.min(scrollPast / (wrapperH * 0.6), 1);
-        const scale = 1 - (progress * 0.05);
-        const opacity = 1 - (progress * 0.4);
-        card.style.transform = `scale(${scale})`;
-        card.style.opacity = opacity;
-      } else if (scrollPast <= 0) {
-        card.style.transform = 'scale(1)';
-        card.style.opacity = '1';
-      }
-    });
-  }
-
-  window.addEventListener('scroll', updateCards, { passive: true });
-  updateCards();
-})();
+document.querySelectorAll('.story-reveal').forEach(el => storyObserver.observe(el));
 
 // FAQ toggle
 document.querySelectorAll('.faq-q').forEach(q => {
