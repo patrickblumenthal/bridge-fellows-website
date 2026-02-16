@@ -207,9 +207,9 @@ section { padding: 6rem 3rem; }
 }
 .about strong { color: var(--fg); font-weight: 500; }
 
-/* ---- STORIES (stacked scroll-reveal) ---- */
+/* ---- STORIES (sticky stacking cards) ---- */
 .stories-section {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 0;
   background: var(--bg);
   border-top: 1px solid var(--border);
 }
@@ -224,6 +224,14 @@ section { padding: 6rem 3rem; }
   font-weight: 400;
   margin-bottom: 3rem;
 }
+.story-card-wrapper {
+  height: 85vh;
+  position: sticky;
+  top: 80px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
 .story-card {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -232,18 +240,10 @@ section { padding: 6rem 3rem; }
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 2.5rem;
-  margin-bottom: 2rem;
   align-items: start;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.story-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.story-card:last-child {
-  margin-bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 30px rgba(0,0,0,0.4);
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 .story-image {
   background-size: cover;
@@ -569,10 +569,14 @@ footer p {
   .hero h1 { font-size: 2.8rem; }
   section { padding: 4rem 3rem; }
   .story-card {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 1.5rem;
+    padding: 2rem;
   }
   .story-image { height: 240px; }
+  .story-card-wrapper {
+    height: 75vh;
+  }
 }
 
 /* Mobile */
@@ -641,21 +645,27 @@ footer p {
 
   /* Stories */
   .stories-section {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.5rem 0;
   }
   .stories-container h2 {
     font-size: 1.6rem;
     margin-bottom: 2rem;
   }
+  .story-card-wrapper {
+    height: auto;
+    position: sticky;
+    top: 60px;
+    padding-top: 0.5rem;
+    height: 85vh;
+  }
   .story-card {
     grid-template-columns: 1fr;
     padding: 1.5rem;
-    gap: 1.5rem;
+    gap: 1rem;
     border-radius: 12px;
-    margin-bottom: 1.5rem;
   }
   .story-image {
-    height: 200px;
+    height: 180px;
     border-radius: 10px;
   }
   .story-content h3 {
@@ -663,15 +673,15 @@ footer p {
   }
   .story-subtitle {
     font-size: 0.85rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
   .story-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.65;
   }
   .story-text strong {
     display: block;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 
   /* Program */
@@ -756,12 +766,14 @@ footer p {
   }
   .hero h1 { font-size: 1.65rem; }
   .hero-sub { font-size: 1rem; }
-  .stories-section { padding: 3rem 1.2rem; }
+  .stories-section { padding: 3rem 1.2rem 0; }
+  .story-card-wrapper { height: 80vh; }
   .story-card {
     padding: 1.2rem;
     border-radius: 10px;
   }
-  .story-image { height: 160px; }
-  .story-content h3 { font-size: 1.2rem; }
-  .story-text { font-size: 0.9rem; }
+  .story-image { height: 140px; }
+  .story-content h3 { font-size: 1.1rem; }
+  .story-text { font-size: 0.85rem; line-height: 1.6; }
+  .story-text p { margin-bottom: 0.7rem; }
 }
