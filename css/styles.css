@@ -213,7 +213,7 @@ section { padding: 6rem 3rem; }
   border-top: 1px solid var(--border);
 }
 .stories-container {
-  max-width: 950px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -339,7 +339,7 @@ section { padding: 6rem 3rem; }
 
 /* ---- TEAM ---- */
 .team-section {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
   border-top: 1px solid var(--border);
 }
@@ -354,6 +354,8 @@ section { padding: 6rem 3rem; }
   border: 1px solid var(--border);
   border-radius: 16px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .team-photo {
   width: 120px;
@@ -404,6 +406,7 @@ section { padding: 6rem 3rem; }
   justify-content: center;
   color: var(--muted);
   transition: color 0.3s;
+  margin-top: auto;
 }
 .team-linkedin:hover {
   color: var(--accent);
@@ -411,7 +414,7 @@ section { padding: 6rem 3rem; }
 
 /* ---- FAQ ---- */
 .faq {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   border-top: 1px solid var(--border);
 }
