@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#1a1a2e"/>
+  <text x="32" y="46" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="40" font-weight="400">
+    <tspan fill="#ffffff">B</tspan><tspan fill="#E8C97A">F</tspan>
+  </text>
+</svg>
