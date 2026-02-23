@@ -16,7 +16,7 @@ const storyObserver = new IntersectionObserver((entries) => {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.1 });
 
 document.querySelectorAll('.story-reveal').forEach(el => storyObserver.observe(el));
 
@@ -28,29 +28,4 @@ document.querySelectorAll('.faq-q').forEach(q => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
-});
-
-// Modal functionality
-const modal = document.getElementById('infoModal');
-const modalText = document.getElementById('modalText');
-const closeBtn = document.querySelector('.modal-close');
-
-if (closeBtn) {
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-  });
-}
-
-if (modal) {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('show');
-    }
-  });
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
-    modal.classList.remove('show');
-  }
 });
