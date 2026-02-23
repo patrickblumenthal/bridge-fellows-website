@@ -209,67 +209,93 @@ section { padding: 7rem 3rem; }
 
 /* ---- STORIES ---- */
 .stories-section { border-top: 1px solid var(--border); }
+.stories-section .section-inner { max-width: 960px; }
 .stories-intro {
   font-size: 1.05rem;
   color: var(--muted);
   line-height: 1.9;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
   font-weight: 300;
 }
 .story-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
 .story-card {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 2rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 1.8rem 2rem;
-  align-items: start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: box-shadow 0.3s;
 }
 .story-card:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.07);
 }
 .story-reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.story-reveal:nth-child(2) { transition-delay: 0.12s; }
+.story-reveal:nth-child(3) { transition-delay: 0.24s; }
 .story-reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 .story-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center top;
-  height: 185px;
-  border-radius: 10px;
   background-repeat: no-repeat;
   flex-shrink: 0;
 }
+.story-content {
+  padding: 1.4rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.story-acquisition {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+.story-acquisition-label {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--label);
+}
 .story-content h3 {
   font-family: var(--serif);
-  font-size: 1.45rem;
-  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
   color: var(--fg);
   font-weight: 400;
 }
 .story-subtitle {
   color: var(--label);
-  font-size: 0.85rem;
-  margin-bottom: 1.2rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.9rem;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 .story-para {
-  font-size: 0.97rem;
-  line-height: 1.85;
+  font-size: 0.88rem;
+  line-height: 1.8;
   color: var(--text-body);
   font-weight: 300;
 }
@@ -468,12 +494,8 @@ footer p {
 @media (min-width: 769px) and (max-width: 1024px) {
   nav { padding: 1.4rem 2.5rem; }
   section { padding: 5.5rem 2.5rem; }
-  .story-card {
-    grid-template-columns: 165px 1fr;
-    gap: 2rem;
-    padding: 2rem;
-  }
-  .story-image { height: 205px; }
+  .story-cards { gap: 1rem; }
+  .story-acquisition { font-size: 1.8rem; }
   .cta-card { padding: 4rem 3.5rem; }
 }
 
@@ -500,18 +522,15 @@ footer p {
 
   .section-title { font-size: clamp(1.7rem, 6vw, 2.2rem); }
 
-  .stories-intro { font-size: 1rem; margin-bottom: 2.5rem; }
-  .story-cards { gap: 1.4rem; }
-  .story-card {
+  .stories-intro { font-size: 1rem; margin-bottom: 2rem; }
+  .story-cards {
     grid-template-columns: 1fr;
-    padding: 1.8rem;
-    gap: 1.2rem;
-    border-radius: 16px;
+    gap: 1rem;
   }
-  .story-image {
-    height: 200px;
-    border-radius: 10px;
-  }
+  .story-card { border-radius: 16px; }
+  .story-acquisition { font-size: 1.8rem; }
+  .story-reveal:nth-child(2),
+  .story-reveal:nth-child(3) { transition-delay: 0s; }
 
   .program-list-card { padding: 0 1.8rem; }
 
