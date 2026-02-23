@@ -376,7 +376,8 @@ section { padding: 7rem 3rem; }
 
 /* ---- FINAL CTA ---- */
 .cta-section {
-  padding-bottom: 8rem;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
 }
 .cta-card {
   background: var(--fg);
