@@ -353,6 +353,45 @@ section { padding: 7rem 3rem; }
   margin-top: 0.5rem;
 }
 
+/* ---- ECOSYSTEM ---- */
+.ecosystem { border-top: 1px solid var(--border); }
+.ecosystem-intro {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+.ecosystem-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+.ecosystem-logo {
+  flex: 0 0 auto;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ecosystem-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.ecosystem-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.ecosystem-logo--sm {
+  width: 170px;
+}
+
 /* ---- FAQ ---- */
 .faq { border-top: 1px solid var(--border); }
 .faq-item {
@@ -539,6 +578,9 @@ footer p {
     grid-template-columns: 56px 1fr;
     gap: 1.2rem;
   }
+
+  .ecosystem-logos { gap: 2rem; }
+  .ecosystem-logo { width: 160px; }
 
   .cta-card {
     padding: 3rem 2rem;
