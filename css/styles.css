@@ -366,30 +366,27 @@ section { padding: 7rem 3rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.5rem;
-  flex-wrap: wrap;
+  gap: 3rem;
+  flex-wrap: nowrap;
 }
 .ecosystem-logo {
-  flex: 0 0 auto;
-  width: 220px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .ecosystem-logo img {
-  width: 100%;
-  height: auto;
+  height: 50px;
+  width: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.65;
   transition: filter 0.3s, opacity 0.3s;
 }
-.ecosystem-logo img:hover {
+.ecosystem-logo:hover img {
   filter: grayscale(0%);
   opacity: 1;
 }
-.ecosystem-logo--sm {
-  width: 170px;
+.ecosystem-logo--lg img {
+  height: 35px;
 }
 
 /* ---- FAQ ---- */
@@ -580,7 +577,7 @@ footer p {
   }
 
   .ecosystem-logos { gap: 2rem; }
-  .ecosystem-logo { width: 160px; }
+  .ecosystem-logo img { height: 40px; }
 
   .cta-card {
     padding: 3rem 2rem;
