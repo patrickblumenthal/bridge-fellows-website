@@ -455,6 +455,12 @@ section { padding: 7rem 3rem; }
   color: var(--bg);
   margin-bottom: 1.5rem;
 }
+.cta-tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(253, 252, 252, 0.5);
+  margin-bottom: 1.5rem;
+}
 .cta-body {
   font-size: 1.05rem;
   color: rgba(253, 252, 252, 0.6);
