@@ -826,7 +826,7 @@ footer p {
     padding: 7rem 1.5rem 4rem;
     min-height: 90vh;
   }
-  .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); line-height: 1.15; }
+  .hero h1 { font-size: clamp(2.3rem, 9.5vw, 3.2rem); line-height: 1.15; }
   .hero-sub { font-size: 1rem; }
   .hero-dates { font-size: 0.74rem; }
 
