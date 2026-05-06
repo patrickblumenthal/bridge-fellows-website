@@ -14,6 +14,17 @@
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar" id="announcementBar">
+  <a class="announcement-bar-text" href="https://bridgefellows.notion.site" target="_blank" rel="noopener noreferrer">
+    <strong>Applications open for our July 2026 Silicon Valley Immersion.</strong>
+    <span class="announcement-bar-sep">&middot;</span>
+    Closes 31 May
+    <span class="announcement-bar-cta">Apply now &rarr;</span>
+  </a>
+  <button type="button" class="announcement-bar-close" aria-label="Dismiss" onclick="dismissAnnouncementBar()">&times;</button>
+</div>
+
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Bridge<span>Fellows</span></a>
@@ -67,10 +78,11 @@
         <div class="what-tag">Warm introductions</div>
         <p>Direct intros to Silicon Valley investors, companies, and operators when you're ready for them.</p>
       </div>
-      <div class="what-card what-card--flagship">
+      <a href="https://bridgefellows.notion.site" target="_blank" rel="noopener noreferrer" class="what-card what-card--flagship what-card--link">
         <div class="what-tag">Fellows Programme <span class="what-flag">Flagship</span></div>
         <p>One-week Silicon Valley immersion. 10 Oxbridge founders selected each July. Direct access to the people who fund and build the world's biggest AI companies.</p>
-      </div>
+        <span class="what-card-link-arrow">Read more &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -126,7 +138,7 @@
     <div class="programme-meta">
       <div><span class="programme-meta-label">Dates</span><span>11&ndash;18 July 2026</span></div>
       <div><span class="programme-meta-label">Cohort</span><span>10 founders</span></div>
-      <div><span class="programme-meta-label">Applications</span><span>Open 10 May 2026 &middot; Rolling review</span></div>
+      <div><span class="programme-meta-label">Applications</span><span>Open, rolling review</span></div>
     </div>
     <p>Most of what gets called a "Silicon Valley experience" is tourism: panels, group tours, a lanyard. This isn't that.</p>
     <p>The BridgeFellows week is built around direct access. Small-group and 1:1 time with AI founders who've raised from top-tier funds. Investors who write early checks into AI companies and can tell you in plain terms what they're actually looking for. Operators who've scaled AI teams from five people to five hundred.</p>
@@ -153,7 +165,10 @@
           <span class="elig-value">Any stage. Pre-idea to Series A.</span>
         </div>
       </div>
-      <a href="https://forms.gle/apttB17UWYKxEncDA" target="_blank" rel="noopener noreferrer" class="programme-cta">Join our newsletter to hear when applications open &rarr;</a>
+      <div class="programme-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnzJaQAtLUC8QYarqBg8xoNllrvysZKOxps2n9MYInKYlPQA/viewform" target="_blank" rel="noopener noreferrer" class="programme-apply-btn">Apply now</a>
+        <a href="https://bridgefellows.notion.site" target="_blank" rel="noopener noreferrer" class="programme-cta">Read full programme details &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
@@ -289,7 +304,7 @@
   <div class="section-inner">
     <div class="cta-card">
       <h2 class="cta-title">Join our newsletter</h2>
-      <p class="cta-body">Curated SV hiring opportunities, fundraising tips, founder spotlights, and event invitations. Be first to hear when Fellows Programme applications open on 10 May 2026.</p>
+      <p class="cta-body">Curated SV hiring opportunities, fundraising tips, founder spotlights, and event invitations. Stay close to the community whether you apply or not.</p>
       <a href="https://forms.gle/apttB17UWYKxEncDA" target="_blank" rel="noopener noreferrer" class="cta-btn">Join our newsletter</a>
     </div>
   </div>
@@ -302,6 +317,25 @@
   <p>Oxbridge and Silicon Valley &nbsp;&middot;&nbsp; Cohort 1, 11&ndash;18 July 2026</p>
 </footer>
 
+<script>
+  (function() {
+    var bar = document.getElementById('announcementBar');
+    if (!bar) return;
+    if (localStorage.getItem('bf_bar_dismissed') === '1') {
+      bar.style.display = 'none';
+      document.body.classList.add('bar-dismissed');
+    } else {
+      document.body.classList.add('bar-visible');
+    }
+  })();
+  function dismissAnnouncementBar() {
+    var bar = document.getElementById('announcementBar');
+    if (bar) bar.style.display = 'none';
+    document.body.classList.remove('bar-visible');
+    document.body.classList.add('bar-dismissed');
+    try { localStorage.setItem('bf_bar_dismissed', '1'); } catch (e) {}
+  }
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>
